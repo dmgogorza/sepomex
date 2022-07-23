@@ -15,7 +15,10 @@ class CreateCitiesTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignId('federal_entity_id');
             $table->timestamps();
+            $table->foreign('federal_entity_id')->references('id')->on('federal_entities');
         });
     }
 

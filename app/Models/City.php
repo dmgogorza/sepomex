@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name'];
+
+    /**
+     * Get the federal entity of the city
+     */
+    public function federalEntity()
+    {
+        return $this->belongsTo(FederalEntity::class);
+    }
 }
