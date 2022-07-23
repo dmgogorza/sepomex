@@ -17,7 +17,7 @@ class CreateSettlementsTable extends Migration
             $table->id();
             $table->string('name');
             $table->enum('zone', ['Urbano', 'Rural']);
-            $table->integer('cp');
+            $table->string('cp');
             $table->unsignedBigInteger('municipality_id');
             $table->unsignedBigInteger('internal_id');
             $table->unsignedBigInteger('type_id');
