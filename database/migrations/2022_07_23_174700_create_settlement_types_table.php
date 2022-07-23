@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCitiesTable extends Migration
+class CreateSettlementTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateCitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cities', function (Blueprint $table) {
+        Schema::create('settlement_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('federal_entity_id');
             $table->timestamps();
-            $table->foreign('federal_entity_id')->references('id')->on('federal_entities');
         });
     }
 
@@ -29,6 +27,6 @@ class CreateCitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cities');
+        Schema::dropIfExists('settlement_types');
     }
 }
