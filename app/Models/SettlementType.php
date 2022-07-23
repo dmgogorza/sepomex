@@ -10,4 +10,12 @@ class SettlementType extends Model
     use HasFactory;
 
     protected $fillable = ['name'];
+
+    /**
+     * Get the settlements for the settlement type
+     */
+    public function settlements()
+    {
+        return $this->hasMany(Settlement::class);
+    }
 }

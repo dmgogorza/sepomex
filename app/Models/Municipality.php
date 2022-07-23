@@ -18,4 +18,12 @@ class Municipality extends Model
     {
         return $this->belongsTo(FederalEntity::class);
     }
+
+    /**
+     * Get the settlements for the municipality
+     */
+    public function settlements()
+    {
+        return $this->hasMany(Settlement::class);
+    }
 }

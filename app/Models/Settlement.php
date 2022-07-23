@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Settlement extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name', 'zone', 'cp'];
+
+    /**
+     * Get the settlement type of the settlement
+     */
+    public function settlementType()
+    {
+        return $this->belongsTo(SettlementType::class);
+    }
+
+    /**
+     * Get the municipality of the settlement
+     */
+    public function municipality()
+    {
+        return $this->belongsTo(Municipality::class);
+    }
 }
