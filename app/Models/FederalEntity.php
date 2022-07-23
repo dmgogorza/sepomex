@@ -18,4 +18,12 @@ class FederalEntity extends Model
     {
         return $this->hasMany(City::class);
     }
+
+    /**
+     * Get the municipalities for the federal entity
+     */
+    public function municipalities()
+    {
+        return $this->hasMany(Municipality::class);
+    }
 }
