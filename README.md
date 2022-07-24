@@ -3,7 +3,9 @@
 ## Challenge
 
 El reto consiste en utilizar el framework Laravel para replicar la funcionalidad de esta api (https://jobs.backbonesystems.io/api/zip-codes/01210), utilizando esta fuente de información (https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx).
+
 El tiempo de respuesta promedio debe ser menor a 300 ms, pero entre menor sea, mejor.
+
 [GET] https://jobs.backbonesystems.io/api/zip-codes/{zip_code}
 
 ## Inicio
