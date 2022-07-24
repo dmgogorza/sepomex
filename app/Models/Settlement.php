@@ -9,17 +9,17 @@ class Settlement extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
     protected $fillable = [
         'code',
         'name',
         'zone',
-        'cp',
     ];
 
     /**
      * Get the settlement type of the settlement
      */
-    public function settlementType()
+    public function type()
     {
         return $this->belongsTo(SettlementType::class);
     }
@@ -30,5 +30,13 @@ class Settlement extends Model
     public function municipality()
     {
         return $this->belongsTo(Municipality::class);
+    }
+
+    /**
+     * Get the zip code of the settlement
+     */
+    public function zipCode()
+    {
+        return $this->belongsTo(ZipCode::class);
     }
 }

@@ -18,10 +18,10 @@ class CreateSettlementsTable extends Migration
             $table->string('code', 4);
             $table->string('name');
             $table->string('zone');
-            $table->string('cp', 5);
+            $table->unsignedBigInteger('zip_code_id');
             $table->unsignedBigInteger('municipality_id');
             $table->unsignedBigInteger('type_id');
-            $table->timestamps();
+            $table->foreign('zip_code_id')->references('id')->on('zip_codes');
             $table->foreign('municipality_id')->references('id')->on('municipalities');
             $table->foreign('type_id')->references('id')->on('settlement_types');
         });
