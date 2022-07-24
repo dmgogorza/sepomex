@@ -16,11 +16,11 @@ class SettlementResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'key' => (int) $this->code,
-            'name' => Str::upper($this->name),
+            'key'       => (int) $this->code,
+            'name'      => Str::upper($this->name),
             'zone_type' => Str::upper($this->zone),
             'settlement_type' => [
-                'name' => $this->type->name
+                'name'  => $this->type->name
             ],
         ];
     }

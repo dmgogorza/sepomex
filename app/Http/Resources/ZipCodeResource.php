@@ -17,11 +17,11 @@ class ZipCodeResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'zip_code' => $this->code,
-            'locality' => Str::upper($this->city->name),
+            'zip_code'       => $this->code,
+            'locality'       => Str::upper($this->city->name ?? NULL),
             'federal_entity' => new FederalEntityResource($this->federalEntity),
-            'settlements' => new SettlementCollection($this->settlements),
-            'municipality' => new MunicipalityResource($this->municipality),
+            'settlements'    => new SettlementCollection($this->settlements),
+            'municipality'   => new MunicipalityResource($this->municipality),
         ];
     }
 }

@@ -12,6 +12,10 @@ class ZipCodeController extends Controller
     {
         $zipCode = ZipCode::where('code', $id)->first();
 
-        return response()->json(new ZipCodeResource($zipCode));
+        if (!empty($zipCode)) {
+            return response()->json(new ZipCodeResource($zipCode));
+        } else {
+            return abort(404);
+        }
     }
 }
