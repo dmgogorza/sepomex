@@ -9,7 +9,10 @@ class Municipality extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'code',
+        'name',
+    ];
 
     /**
      * Get the federal entity of the municipality

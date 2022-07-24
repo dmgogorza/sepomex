@@ -15,6 +15,7 @@ class CreateSettlementTypesTable extends Migration
     {
         Schema::create('settlement_types', function (Blueprint $table) {
             $table->id();
+            $table->string('code', 2);
             $table->string('name');
             $table->timestamps();
         });

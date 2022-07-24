@@ -15,6 +15,7 @@ class CreateFederalEntitiesTable extends Migration
     {
         Schema::create('federal_entities', function (Blueprint $table) {
             $table->id();
+            $table->string('code', 2);
             $table->string('name');
             $table->timestamps();
         });

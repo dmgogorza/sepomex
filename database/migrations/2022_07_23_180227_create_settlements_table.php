@@ -15,11 +15,11 @@ class CreateSettlementsTable extends Migration
     {
         Schema::create('settlements', function (Blueprint $table) {
             $table->id();
+            $table->string('code', 4);
             $table->string('name');
-            $table->enum('zone', ['Urbano', 'Rural']);
-            $table->string('cp');
+            $table->string('zone');
+            $table->string('cp', 5);
             $table->unsignedBigInteger('municipality_id');
-            $table->unsignedBigInteger('internal_id');
             $table->unsignedBigInteger('type_id');
             $table->timestamps();
             $table->foreign('municipality_id')->references('id')->on('municipalities');
