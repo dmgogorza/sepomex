@@ -10,9 +10,10 @@ El tiempo de respuesta promedio debe ser menor a 300 ms, pero entre menor sea, m
 
 ## Inicio
 
-1) php artisan migrate:fresh --seed
-2) php artisan serve
-3) Enjoy!
+1) composer install
+2) php artisan migrate:fresh --seed
+3) php artisan serve
+4) Enjoy!
 
 ## Descripción de la solución
 
