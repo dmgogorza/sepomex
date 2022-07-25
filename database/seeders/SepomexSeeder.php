@@ -2,10 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Imports\SepomexImport;
 use Illuminate\Database\Seeder;
-use Maatwebsite\Excel\Facades\Excel;
-
 
 class SepomexSeeder extends Seeder
 {
@@ -16,6 +13,15 @@ class SepomexSeeder extends Seeder
      */
     public function run()
     {
-        Excel::import(new SepomexImport, database_path() .'/csv/sepomex.csv');
+
+        $this->call(ImportSanLuisPotosiSeeder::class);
+        $this->call(ImportSinaloaSeeder::class);
+        $this->call(ImportSonoraSeeder::class);
+        $this->call(ImportTabascoSeeder::class);
+        $this->call(ImportTamaulipasSeeder::class);
+        $this->call(ImportTlaxcalaSeeder::class);
+        $this->call(ImportVerazruzDeIgnacioDeLaLlaveSeeder::class);
+        $this->call(ImportYucatanSeeder::class);
+        $this->call(ImportZacatecasSeeder::class);
     }
 }
